@@ -1,0 +1,71 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { CheckCircle2 } from 'lucide-react';
+
+export const About: React.FC = () => {
+  return (
+    <section id="about" className="py-24 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 md:px-8">
+        <div className="flex flex-col lg:flex-row items-center gap-16">
+          
+          {/* Image Side with Continuous Gradient Border */}
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="lg:w-1/2 relative group"
+          >
+            <div className="relative rounded-2xl p-[3px] overflow-hidden">
+              {/* Rotating Gradient Background */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] h-[200%] animate-[spin_6s_linear_infinite] bg-[conic-gradient(from_0deg,#06b6d4,#6366f1,#a855f7,#06b6d4)]" />
+              
+              {/* Inner Image Container */}
+              <div className="relative z-10 rounded-xl overflow-hidden bg-black">
+                 <img 
+                  src="https://picsum.photos/600/700?random=50" 
+                  alt="Editor Portrait" 
+                  className="w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <p className="text-white font-bold text-xl">James Anderson</p>
+                  <p className="text-brand-accent">Lead Editor & Strategist</p>
+                </div>
+              </div>
+            </div>
+            
+            {/* Decorative Elements */}
+            <div className="absolute -top-10 -left-10 w-32 h-32 bg-brand-primary/20 rounded-full blur-3xl opacity-50" />
+            <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-brand-secondary/20 rounded-full blur-3xl opacity-50" />
+          </motion.div>
+
+          {/* Text Side */}
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="lg:w-1/2"
+          >
+            <h2 className="text-4xl font-bold mb-6">More Than Just A <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-primary">Video Editor</span></h2>
+            <p className="text-gray-400 text-lg mb-6 leading-relaxed">
+              I started editing at 15, hacking together gaming montages. Today, I treat video editing as a science. 
+              My philosophy combines <span className="text-white font-medium">cinematic storytelling</span> with <span className="text-white font-medium">analytical performance</span>.
+            </p>
+            <p className="text-gray-400 text-lg mb-8 leading-relaxed">
+              I don't just make things "look cool". I ask: "Will this frame make them stay?" If the answer is no, it gets cut.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {['5+ Years Experience', 'Adobe Premiere Expert', 'After Effects Wizard', 'Davinci Resolve Colorist'].map((item, i) => (
+                <div key={i} className="flex items-center gap-3">
+                  <CheckCircle2 className="text-brand-accent" size={20} />
+                  <span className="text-gray-300">{item}</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
