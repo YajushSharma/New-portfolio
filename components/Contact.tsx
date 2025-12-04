@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MessageCircle, Linkedin, Instagram, Github } from 'lucide-react';
+import { Mail, MessageCircle, Instagram, Youtube } from 'lucide-react';
 
 // Custom X Logo
 const XLogo = ({ className }: { className?: string }) => (
@@ -17,14 +17,15 @@ export const Contact: React.FC = () => {
 
       <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
         <motion.div
-           initial={{ opacity: 0, scale: 0.9 }}
-           whileInView={{ opacity: 1, scale: 1 }}
+           initial={{ opacity: 0, y: 30 }}
+           whileInView={{ opacity: 1, y: 0 }}
            viewport={{ once: true }}
+           transition={{ duration: 1, ease: [0.23, 1, 0.32, 1] }}
         >
           <h2 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-8">
             Ready to go <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-secondary to-brand-accent">Viral?</span>
           </h2>
-          <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
+          <p className="hidden md:block text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
             Spots are limited. Let's discuss your content strategy and see if we're a good fit.
           </p>
 
@@ -55,19 +56,18 @@ export const Contact: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-6 pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="flex items-center gap-2">
-           <div className="w-6 h-6 rounded bg-brand-primary flex items-center justify-center text-xs font-bold text-white">E</div>
-           <span className="font-bold text-gray-300">EditorGenius</span>
+           <div className="w-6 h-6 rounded bg-brand-primary flex items-center justify-center text-xs font-bold text-white">R</div>
+           <span className="font-bold text-gray-300">RazexEdits</span>
         </div>
 
         <div className="flex gap-6">
           <a href="#" className="text-gray-500 hover:text-white transition-colors"><XLogo className="w-5 h-5" /></a>
-          <a href="#" className="text-gray-500 hover:text-white transition-colors"><Linkedin size={20} /></a>
           <a href="#" className="text-gray-500 hover:text-white transition-colors"><Instagram size={20} /></a>
-          <a href="#" className="text-gray-500 hover:text-white transition-colors"><Github size={20} /></a>
+          <a href="#" className="text-gray-500 hover:text-white transition-colors"><Youtube size={20} /></a>
         </div>
 
         <p className="text-sm text-gray-600">
-          © {new Date().getFullYear()} EditorGenius. All rights reserved.
+          © {new Date().getFullYear()} RazexEdits. All rights reserved.
         </p>
       </div>
     </footer>

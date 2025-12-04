@@ -51,10 +51,10 @@ export const Navbar: React.FC = () => {
   return (
     <>
       <motion.nav
-        initial={{ y: -100, opacity: 0 }}
+        initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease: "circOut", delay: 0.2 }}
-        className={`fixed top-4 md:top-6 left-0 right-0 z-50 mx-auto w-[90%] md:w-[85%] max-w-5xl transition-all duration-300 border border-white/10 bg-black/40 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.36)] overflow-hidden ${mobileMenuOpen ? 'rounded-[2rem] bg-black/95' : 'rounded-full'}`}
+        transition={{ duration: 1, ease: [0.23, 1, 0.32, 1], delay: 0.2 }}
+        className={`fixed top-4 md:top-6 left-0 right-0 z-50 mx-auto w-[90%] md:w-[85%] max-w-5xl transition-all duration-500 border border-white/10 bg-black/40 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.36)] overflow-hidden ${mobileMenuOpen ? 'rounded-[2rem] bg-black/95' : 'rounded-full'}`}
       >
         {/* Subtle Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent opacity-50 pointer-events-none" />
@@ -80,7 +80,7 @@ export const Navbar: React.FC = () => {
                   <motion.div
                     layoutId="activeTab"
                     className="absolute inset-0 bg-white/10 rounded-full"
-                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                    transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
                   />
                 )}
                 <span className="relative z-10">{item.label}</span>
@@ -113,6 +113,7 @@ export const Navbar: React.FC = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
               className="md:hidden border-t border-white/10 overflow-hidden"
             >
               <div className="flex flex-col p-6 gap-2">

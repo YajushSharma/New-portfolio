@@ -9,7 +9,8 @@ export const Background: React.FC = () => {
   const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
   const smoothVelocity = useSpring(scrollVelocity, { damping: 50, stiffness: 400 });
-  const velocityOpacity = useTransform(smoothVelocity, [0, 1000], [0.15, 0.5]);
+  // Reduced opacity range for subtle effect on mobile
+  const velocityOpacity = useTransform(smoothVelocity, [0, 1000], [0.02, 0.12]);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.matchMedia('(max-width: 768px)').matches);

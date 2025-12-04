@@ -8,23 +8,21 @@ export const About: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <div className="flex flex-col lg:flex-row items-center gap-16">
           
-          {/* Image Side with Continuous Gradient Border */}
+          {/* Image Side */}
           <motion.div 
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 1, ease: [0.23, 1, 0.32, 1] }}
             className="lg:w-1/2 relative group"
           >
-            <div className="relative rounded-2xl p-[3px] overflow-hidden">
-              {/* Rotating Gradient Background */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] h-[200%] animate-[spin_6s_linear_infinite] bg-[conic-gradient(from_0deg,#06b6d4,#6366f1,#a855f7,#06b6d4)]" />
-              
+            <div className="relative rounded-2xl overflow-hidden bg-black border border-white/10 shadow-2xl">
               {/* Inner Image Container */}
-              <div className="relative z-10 rounded-xl overflow-hidden bg-black">
+              <div className="relative z-10 overflow-hidden">
                  <img 
                   src="https://picsum.photos/600/700?random=50" 
                   alt="Editor Portrait" 
-                  className="w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                  className="w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
@@ -41,9 +39,10 @@ export const About: React.FC = () => {
 
           {/* Text Side */}
           <motion.div 
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 1, ease: [0.23, 1, 0.32, 1], delay: 0.2 }}
             className="lg:w-1/2"
           >
             <h2 className="text-4xl font-bold mb-6">More Than Just A <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-primary">Video Editor</span></h2>

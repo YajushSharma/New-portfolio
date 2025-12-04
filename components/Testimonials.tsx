@@ -38,10 +38,10 @@ interface TestimonialCardProps {
 const TestimonialCard: React.FC<TestimonialCardProps> = ({ t, i }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.95 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
-      transition={{ delay: i * 0.2 }}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.8, delay: i * 0.1, ease: [0.23, 1, 0.32, 1] }}
       className="relative p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md group overflow-hidden"
     >
       <div className="relative z-20">
@@ -73,9 +73,10 @@ export const Testimonials: React.FC = () => {
     <section id="reviews" className="py-24 bg-gradient-to-b from-transparent to-brand-surface/50">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
          <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
             className="text-center mb-16"
          >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Hear From My <span className="text-green-400">Clients</span></h2>

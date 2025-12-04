@@ -5,14 +5,15 @@ import { VideoModal } from './ui/VideoModal';
 import { VideoCard } from './ui/VideoCard';
 
 const longFormData: VideoProject[] = [
-  { id: '101', title: 'Full Documentary Edit', category: 'long', thumbnailUrl: 'https://picsum.photos/600/338?random=10', videoUrl: 'https://www.youtube.com/watch?v=fMrR-NqyGSk', views: '450K' },
-  { id: '102', title: 'Educational Course Module', category: 'long', thumbnailUrl: 'https://picsum.photos/600/338?random=11', videoUrl: 'https://www.youtube.com/watch?v=CDvo7jpAiCM', views: '120K' },
-  { id: '103', title: 'Corporate Brand Story', category: 'long', thumbnailUrl: 'https://picsum.photos/600/338?random=12', videoUrl: 'https://www.youtube.com/watch?v=LXb3EKWsInQ', views: '80K' },
-  { id: '104', title: 'Product Launch VSL', category: 'long', thumbnailUrl: 'https://picsum.photos/600/338?random=13', videoUrl: 'https://www.youtube.com/watch?v=LXb3EKWsInQ', views: '200K' },
+  { id: '101', title: 'Infotainment long form', category: 'long', thumbnailUrl: '', videoUrl: 'https://www.youtube.com/watch?v=-GQ8Aq3Tj6Q', views: '15K' },
+  { id: '102', title: 'Infotainment long form', category: 'long', thumbnailUrl: '', videoUrl: 'https://youtu.be/R6wJE-nTT2A?si=hDMSVBjMmS80mWD3&t=103', views: '12k' },
+  { id: '103', title: 'Podast', category: 'long', thumbnailUrl: '', videoUrl: 'https://www.youtube.com/watch?v=nomcki-Mr5g', views: '64K' },
+  { id: '104', title: 'Tech Headphones Review', category: 'long', thumbnailUrl: '', videoUrl: 'https://www.youtube.com/watch?v=8jxM1QTIL10', views: '100K' },
 ];
 
 export const LongFormGallery: React.FC = () => {
-  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+  const [selectedVideoUrl, setSelectedVideoUrl] = useState<string | null>(null);
+  const [selectedVideoStartTime, setSelectedVideoStartTime] = useState<number>(0);
   const [activeVideoId, setActiveVideoId] = useState<string | null>(null);
 
   useEffect(() => {
@@ -23,12 +24,18 @@ export const LongFormGallery: React.FC = () => {
 
   const handlePlayInline = (id: string) => {
     window.dispatchEvent(new Event('stop-inline-videos'));
-    setActiveVideoId(id);
+    setTimeout(() => setActiveVideoId(id), 0);
   };
 
-  const handleExpand = (url: string) => {
+  const handleExpand = (url: string, startTime: number = 0) => {
     window.dispatchEvent(new Event('stop-inline-videos'));
-    setSelectedVideo(url);
+    setSelectedVideoUrl(url);
+    setSelectedVideoStartTime(startTime);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedVideoUrl(null);
+    setSelectedVideoStartTime(0);
   };
 
   return (
@@ -36,9 +43,10 @@ export const LongFormGallery: React.FC = () => {
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         <div className="flex flex-col items-center text-center mb-12">
             <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
               className="text-4xl md:text-5xl font-bold mb-4"
             >
               Long Form <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-primary">Masterpieces</span>
@@ -46,9 +54,9 @@ export const LongFormGallery: React.FC = () => {
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-gray-400 max-w-xl"
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1], delay: 0.1 }}
+              className="hidden md:block text-gray-400 max-w-xl"
             >
               Storytelling that keeps viewers watching until the very end. Perfect for YouTube videos, documentaries, and sales letters.
             </motion.p>
@@ -61,7 +69,7 @@ export const LongFormGallery: React.FC = () => {
               item={project}
               isActive={activeVideoId === project.id}
               onPlay={() => handlePlayInline(project.id)}
-              onExpand={() => handleExpand(project.videoUrl)}
+              onExpand={(startTime) => handleExpand(project.videoUrl, startTime)}
               aspectRatio="horizontal"
             />
           ))}
@@ -69,9 +77,10 @@ export const LongFormGallery: React.FC = () => {
       </div>
 
        <VideoModal 
-        isOpen={!!selectedVideo} 
-        videoUrl={selectedVideo} 
-        onClose={() => setSelectedVideo(null)} 
+        isOpen={!!selectedVideoUrl} 
+        videoUrl={selectedVideoUrl}
+        startTime={selectedVideoStartTime}
+        onClose={handleCloseModal} 
       />
     </section>
   );

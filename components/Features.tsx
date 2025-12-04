@@ -33,14 +33,14 @@ interface FeatureCardProps {
 const FeatureCard: React.FC<FeatureCardProps> = ({ feature, index }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: index * 0.1 }}
-      className="relative p-8 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 transition-all duration-300 group overflow-hidden"
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.8, delay: index * 0.1, ease: [0.23, 1, 0.32, 1] }}
+      className="relative p-8 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 transition-all duration-500 group overflow-hidden"
     >
       <div className="relative z-20">
-        <div className="mb-6 bg-white/5 w-16 h-16 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+        <div className="mb-6 bg-white/5 w-16 h-16 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform duration-500 ease-out">
           {feature.icon}
         </div>
         <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
@@ -57,10 +57,24 @@ export const Features: React.FC = () => {
     <section id="features" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Why Top Creators <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-primary">Choose Us</span></h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
+            className="text-4xl md:text-5xl font-bold mb-6"
+          >
+            Why Top Creators <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-primary">Choose Us</span>
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1], delay: 0.1 }}
+            className="hidden md:block text-gray-400 max-w-2xl mx-auto text-lg"
+          >
             We don't just edit videos. We engineer content for growth using proven retention strategies.
-          </p>
+          </motion.p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
