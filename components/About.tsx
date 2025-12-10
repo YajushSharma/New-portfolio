@@ -1,8 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
-import img from '../images/img.jpg';
-
 export const About: React.FC = () => {
   return (
     <section id="about" className="py-24 relative overflow-hidden">
@@ -21,7 +19,7 @@ export const About: React.FC = () => {
               {/* Inner Image Container */}
               <div className="relative z-10 overflow-hidden">
                  <img 
-                  src='{img}'
+                  src='https://i.postimg.cc/jSpv1sCB/Universal-Upscaler-b727cac5-0646-4eb2-b9b6-5ce435b034b9.jpg'
                   alt="Editor Portrait" 
                   className="w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-out"
                 />
