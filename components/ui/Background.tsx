@@ -9,7 +9,6 @@ export const Background: React.FC = () => {
   const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
   const smoothVelocity = useSpring(scrollVelocity, { damping: 50, stiffness: 400 });
-  // Reduced opacity range for subtle effect on mobile
   const velocityOpacity = useTransform(smoothVelocity, [0, 1000], [0.02, 0.12]);
 
   useEffect(() => {
@@ -32,38 +31,76 @@ export const Background: React.FC = () => {
   }, [isMobile]);
 
   return (
-    <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-      {/* Animated Gradients */}
+    <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-brand-dark">
+      {/* Animated Gradients / Orbs */}
+      {/* Orb 1: Primary Indigo - Slow drift */}
       <motion.div 
         animate={{ 
           scale: [1, 1.2, 1],
           opacity: [0.3, 0.5, 0.3],
-          x: [-50, 50, -50],
-          y: [-20, 20, -20]
+          x: ['-10%', '10%', '-10%'],
+          y: ['-10%', '10%', '-10%']
         }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-brand-primary/20 rounded-full blur-[120px]" 
+        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute -top-[20%] -left-[10%] w-[70vw] h-[70vw] bg-brand-primary/20 rounded-full blur-[100px] md:blur-[120px]" 
       />
+      
+      {/* Orb 2: Secondary Purple - Counter drift */}
       <motion.div 
          animate={{ 
           scale: [1, 1.1, 1],
           opacity: [0.2, 0.4, 0.2],
-          x: [50, -50, 50],
+          x: ['10%', '-10%', '10%'],
+          y: ['10%', '-10%', '10%']
         }}
-        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-brand-secondary/20 rounded-full blur-[120px]" 
+        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+        className="absolute -bottom-[20%] -right-[10%] w-[60vw] h-[60vw] bg-brand-secondary/20 rounded-full blur-[100px] md:blur-[120px]" 
+      />
+      
+      {/* Orb 3: Accent Cyan - Center float */}
+       <motion.div 
+         animate={{ 
+          scale: [1, 1.3, 1],
+          opacity: [0.15, 0.3, 0.15],
+          x: ['-5%', '5%', '-5%'],
+        }}
+        transition={{ duration: 20, repeat: Infinity, ease: "easeInOut", delay: 5 }}
+        className="absolute top-[30%] left-[20%] w-[50vw] h-[50vw] bg-brand-accent/15 rounded-full blur-[100px] md:blur-[120px]" 
+      />
+
+      {/* Orb 4: Rose/Pink - Top Right Accent */}
+      <motion.div 
+        animate={{ 
+          scale: [0.8, 1, 0.8],
+          opacity: [0.1, 0.25, 0.1],
+          y: ['5%', '-5%', '5%'],
+        }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        className="absolute top-[10%] right-[10%] w-[40vw] h-[40vw] bg-rose-500/10 rounded-full blur-[80px] md:blur-[100px]" 
+      />
+
+       {/* Orb 5: Deep Blue - Bottom Left Anchor */}
+       <motion.div 
+        animate={{ 
+          scale: [1, 1.2, 1],
+          opacity: [0.1, 0.2, 0.1],
+          x: ['5%', '-5%', '5%'],
+        }}
+        transition={{ duration: 25, repeat: Infinity, ease: "easeInOut", delay: 3 }}
+        className="absolute bottom-[10%] left-[10%] w-[45vw] h-[45vw] bg-blue-600/10 rounded-full blur-[80px] md:blur-[100px]" 
       />
 
       {/* Desktop Mouse Reactive Grid */}
       {!isMobile && (
         <div 
           ref={containerRef}
-          className="absolute inset-0 z-0 opacity-20"
+          className="absolute inset-0 z-0 opacity-40"
           style={{
             backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)',
             backgroundSize: '30px 30px',
-            maskImage: 'radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, transparent 40%)',
-            WebkitMaskImage: 'radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, transparent 40%)',
+            // Smaller circle (150px radius) for sharper flashlight effect
+            maskImage: 'radial-gradient(circle 150px at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, transparent 100%)',
+            WebkitMaskImage: 'radial-gradient(circle 150px at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, transparent 100%)',
           } as React.CSSProperties}
         />
       )}
@@ -80,7 +117,7 @@ export const Background: React.FC = () => {
         />
       )}
       
-      {/* Base Grid (Dimmer) */}
+      {/* Base Grid (Very Dim) */}
       <div 
         className="absolute inset-0 z-[-1] opacity-5"
         style={{

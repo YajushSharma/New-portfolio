@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
+import img from '../images/img.jpg';
 
 export const About: React.FC = () => {
   return (
@@ -20,7 +21,7 @@ export const About: React.FC = () => {
               {/* Inner Image Container */}
               <div className="relative z-10 overflow-hidden">
                  <img 
-                  src="https://picsum.photos/600/700?random=50" 
+                  src='{img}'
                   alt="Editor Portrait" 
                   className="w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-out"
                 />
