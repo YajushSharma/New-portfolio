@@ -25,8 +25,8 @@ export const About: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
-                  <p className="text-white font-bold text-xl">James Anderson</p>
-                  <p className="text-brand-accent">Lead Editor & Strategist</p>
+                  <p className="text-white font-bold text-xl">Yajush Sharma</p>
+                  <p className="text-brand-accent">Video Editor</p>
                 </div>
               </div>
             </div>
@@ -54,7 +54,7 @@ export const About: React.FC = () => {
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {['5+ Years Experience', 'Adobe Premiere Expert', 'After Effects Wizard', 'Davinci Resolve Colorist'].map((item, i) => (
+              {['2+ Years Experience', 'Adobe Premiere Expert', 'After Effects Wizard', 'Photoshop Master'].map((item, i) => (
                 <div key={i} className="flex items-center gap-3">
                   <CheckCircle2 className="text-brand-accent" size={20} />
                   <span className="text-gray-300">{item}</span>

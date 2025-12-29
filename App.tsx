@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
@@ -8,10 +9,12 @@ import { Testimonials } from './components/Testimonials';
 import { About } from './components/About';
 import { Contact } from './components/Contact';
 import { Background } from './components/ui/Background';
+import { CustomCursor } from './components/ui/CustomCursor';
 
 function App() {
   return (
     <div className="relative min-h-screen bg-brand-dark text-slate-100 font-sans selection:bg-brand-primary/30 selection:text-white">
+      <CustomCursor />
       <Background />
       <Navbar />
       

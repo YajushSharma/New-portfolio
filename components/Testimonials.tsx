@@ -6,26 +6,26 @@ import { Testimonial } from '../types';
 const testimonials: Testimonial[] = [
   {
     id: '1',
-    name: 'Alex Hormozi Style Channel',
+    name: 'Saurabh Saini',
     role: 'YouTuber (500k Subs)',
-    avatarUrl: 'https://picsum.photos/100/100?random=20',
-    quote: "The retention on my videos went up by 35% after switching to EditorGenius. The visual hooks are insane.",
+    avatarUrl: 'https://yt3.googleusercontent.com/5jby35vaE8MN-wPvZmtT3VdWAHQG673XqlMzT4omFNFBrBVD6A43jMfgRUKF63ulCyCRSPsG=s160-c-k-c0x00ffffff-no-rj',
+    quote: "Working with him honestly made my workflow so much smoother. As a designer I’m picky about pacing and clarity, but he somehow understood exactly what I wanted without me over-explaining. Every edit felt intentional. My videos finally look the way I imagine them while scripting.",
     rating: 5
   },
   {
     id: '2',
-    name: 'Sarah Jenkins',
+    name: 'Electrical Unboxing',
     role: 'Course Creator',
-    avatarUrl: 'https://picsum.photos/100/100?random=21',
-    quote: "I was drowning in editing work. Now I just film and upload. Best investment for my business this year.",
+    avatarUrl: 'https://yt3.googleusercontent.com/wApBhsexFgQZVMG24WaOjnDWZB2d0b-j95hKZLj3hMoj2mwPOaK8Vn3wA2Y_1IzMp5OJQZd2-A=s160-c-k-c0x00ffffff-no-rj',
+    quote: "I’ve tried a lot of editors, but he brought a kind of clean, sharp style that fits tech videos perfectly. The short edits especially — crisp cuts, great timing, and no unnecessary flash. My unboxing clips suddenly felt way more premium. Really happy with the consistency too.",
     rating: 5
   },
   {
     id: '3',
-    name: 'TechDaily',
-    role: 'Tech Reviewer',
-    avatarUrl: 'https://picsum.photos/100/100?random=22',
-    quote: "Clean, professional, and fast. They understood my brand guidelines perfectly from day one.",
+    name: 'Varuna Saini',
+    role: 'Social Media Manager',
+    avatarUrl: 'https://instagram.fdel65-2.fna.fbcdn.net/v/t51.2885-19/541945722_17913415653191413_2130760182026480468_n.jpg?stp=dst-jpg_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fdel65-2.fna.fbcdn.net&_nc_cat=101&_nc_oc=Q6cZ2QGGHLOJv7QpWvFReytjyzw7gv0SWGqBi3PTy22yXrAZc9hrVUXfnKf_eRR3lH8jhYNEbD2y5FgoArKB9BHzgaO5&_nc_ohc=TeXAPA2oy-IQ7kNvwHQMEvy&_nc_gid=z0n2ruaWora_qvehk6Bz2A&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Afm2qwMugPOFb2TnHZJW2t5OQ9wx0hzclhi-Y8vXvLoG8A&oe=694B6558&_nc_sid=8b3546',
+    quote: "What I loved most was how reliable he was. I handle multiple clients, and he never once missed a deadline or left me stressed. He adapted to different brand styles quickly and delivered edits that made my clients genuinely excited to post. A super smooth collaboration overall.",
     rating: 5
   }
 ];

@@ -99,8 +99,8 @@ export const Background: React.FC = () => {
             backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)',
             backgroundSize: '30px 30px',
             // Smaller circle (150px radius) for sharper flashlight effect
-            maskImage: 'radial-gradient(circle 150px at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, transparent 100%)',
-            WebkitMaskImage: 'radial-gradient(circle 150px at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, transparent 100%)',
+            maskImage: 'radial-gradient(circle 500px at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, transparent 75%)',
+            WebkitMaskImage: 'radial-gradient(circle 500px at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, transparent 75%)',
           } as React.CSSProperties}
         />
       )}
@@ -121,7 +121,7 @@ export const Background: React.FC = () => {
       <div 
         className="absolute inset-0 z-[-1] opacity-5"
         style={{
-          backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)',
+          backgroundImage: 'radial-gradient(#ffffff 1px, transparent 2px)',
           backgroundSize: '30px 30px',
         }}
       />
