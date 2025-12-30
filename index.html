@@ -7,22 +7,50 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
     <script src="https://www.youtube.com/iframe_api"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
             fontFamily: {
-              sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+              sans: ['"Inter"', 'sans-serif'],
+              display: ['"Outfit"', 'sans-serif'],
             },
             colors: {
-              brand: {
-                primary: '#6366f1', // Indigo 500
-                secondary: '#a855f7', // Purple 500
-                accent: '#06b6d4', // Cyan 500
-                dark: '#030712', // Gray 950
-                surface: '#0f172a', // Slate 900
+              bg: {
+                primary: '#0a0a0f',
+                secondary: '#12121a',
+                tertiary: '#1a1a28',
+              },
+              accent: {
+                purple: '#a855f7',
+                pink: '#ec4899',
+                blue: '#6366f1',
+                orange: '#f59e0b',
+              },
+              text: {
+                primary: '#ffffff',
+                secondary: '#c8c8dc',
+                tertiary: '#9090a8',
+              }
+            },
+            backgroundImage: {
+              'gradient-primary': 'linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #f59e0b 100%)',
+              'gradient-purple': 'linear-gradient(135deg, #6366f1 0%, #a855f7 100%)',
+            },
+            boxShadow: {
+              'glow-purple': '0 0 40px rgba(168, 85, 247, 0.3)',
+              'glow-pink': '0 0 40px rgba(236, 72, 153, 0.3)',
+              'glass': '0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05)',
+            },
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
               }
             }
           }
@@ -31,29 +59,30 @@
     </script>
     <style>
       body {
-        background-color: #030712;
-        color: #f8fafc;
+        background-color: #0a0a0f;
+        color: #ffffff;
         overflow-x: hidden;
       }
-      /* Hide scrollbar for Chrome, Safari and Opera */
-      .no-scrollbar::-webkit-scrollbar {
-        display: none;
-      }
-      /* Hide scrollbar for IE, Edge and Firefox */
-      .no-scrollbar {
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
+      /* Hide scrollbar */
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      
+      @media (pointer: fine) {
+        body, a, button, input, textarea, select { cursor: none !important; }
+        iframe { cursor: auto !important; }
       }
       
-      /* Hide default cursor on desktop to use custom cursor */
-      @media (pointer: fine) {
-        body, a, button, input, textarea, select {
-          cursor: none !important;
-        }
-        /* Show default cursor for iframes/embedded content where custom cursor might be occluded or confusing */
-        iframe {
-          cursor: auto !important;
-        }
+      /* Glass Utility */
+      .glass-card {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      
+      .glass-card:hover {
+        border-color: rgba(168, 85, 247, 0.4);
+        box-shadow: 0 0 40px rgba(168, 85, 247, 0.15);
       }
     </style>
   <script type="importmap">

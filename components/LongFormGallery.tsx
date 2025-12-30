@@ -39,7 +39,7 @@ export const LongFormGallery: React.FC = () => {
   };
 
   return (
-    <section id="longform" className="py-24 bg-brand-surface/30 relative">
+    <section id="longform" className="py-24 bg-bg-secondary/30 relative">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         <div className="flex flex-col items-center text-center mb-12">
             <motion.h2 
@@ -47,16 +47,23 @@ export const LongFormGallery: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-              className="text-4xl md:text-5xl font-bold mb-4"
+              className="text-4xl md:text-5xl font-bold mb-4 font-display"
             >
-              Long Form <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-primary">Masterpieces</span>
+              Long Form{' '}
+              <motion.span 
+                className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-accent-blue via-accent-purple to-accent-blue bg-[length:200%_auto]"
+                animate={{ backgroundPosition: ["0% center", "200% center"] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+              >
+                Masterpieces
+              </motion.span>
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1], delay: 0.1 }}
-              className="hidden md:block text-gray-400 max-w-xl"
+              className="hidden md:block text-text-secondary max-w-xl"
             >
               Storytelling that keeps viewers watching until the very end. Perfect for YouTube videos, documentaries, and sales letters.
             </motion.p>

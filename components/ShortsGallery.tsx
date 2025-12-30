@@ -53,16 +53,23 @@ export const ShortsGallery: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-            className="text-4xl md:text-5xl font-bold mb-4"
+            className="text-4xl md:text-5xl font-bold mb-4 font-display"
           >
-            Short Form <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-primary">Dominance</span>
+            Short Form{' '}
+            <motion.span 
+              className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-accent-blue via-accent-purple to-accent-blue bg-[length:200%_auto]"
+              animate={{ backgroundPosition: ["0% center", "200% center"] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+            >
+              Dominance
+            </motion.span>
           </motion.h2>
           <motion.p 
              initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1], delay: 0.1 }}
-            className="hidden md:block text-gray-400 max-w-2xl mx-auto"
+            className="hidden md:block text-text-secondary max-w-2xl mx-auto"
           >
             Engaging vertical content designed to stop the scroll and maximize retention on TikTok, Reels, and Shorts.
           </motion.p>
