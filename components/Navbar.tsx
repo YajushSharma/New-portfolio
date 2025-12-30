@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavItem } from '../types';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
 
 const navItems: NavItem[] = [
   { id: 'hero', label: 'Home' },
@@ -11,6 +10,68 @@ const navItems: NavItem[] = [
   { id: 'reviews', label: 'Reviews' },
   { id: 'about', label: 'About' },
 ];
+
+const AnimatedMenuIcon = ({ isOpen }: { isOpen: boolean }) => {
+    return (
+        <motion.button 
+            initial={false}
+            animate={isOpen ? "open" : "closed"}
+            className="relative w-10 h-10 flex items-center justify-center text-white focus:outline-none"
+        >
+            <motion.span
+                variants={{
+                    closed: { rotate: 0, y: -5 },
+                    open: { rotate: 45, y: 0 },
+                }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="absolute w-6 h-0.5 bg-current rounded-full"
+            />
+            <motion.span
+                variants={{
+                    closed: { opacity: 1 },
+                    open: { opacity: 0 },
+                }}
+                transition={{ duration: 0.2 }}
+                className="absolute w-6 h-0.5 bg-current rounded-full"
+            />
+            <motion.span
+                variants={{
+                    closed: { rotate: 0, y: 5 },
+                    open: { rotate: -45, y: 0 },
+                }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="absolute w-6 h-0.5 bg-current rounded-full"
+            />
+        </motion.button>
+    );
+};
+
+const menuContainerVariants: Variants = {
+    closed: {
+        height: 0,
+        opacity: 0,
+        transition: {
+            duration: 0.3,
+            ease: [0.23, 1, 0.32, 1],
+            when: "afterChildren"
+        }
+    },
+    open: {
+        height: 'auto',
+        opacity: 1,
+        transition: {
+            duration: 0.4,
+            ease: [0.23, 1, 0.32, 1],
+            staggerChildren: 0.07,
+            delayChildren: 0.1
+        }
+    }
+};
+
+const menuItemVariants: Variants = {
+    closed: { opacity: 0, x: -15 },
+    open: { opacity: 1, x: 0 }
+};
 
 export const Navbar: React.FC = () => {
   const [activeSection, setActiveSection] = useState('hero');
@@ -51,10 +112,16 @@ export const Navbar: React.FC = () => {
   return (
     <>
       <motion.nav
-        initial={{ y: -20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 1, ease: [0.23, 1, 0.32, 1], delay: 0.2 }}
-        className={`fixed top-4 md:top-6 left-0 right-0 z-50 mx-auto w-[90%] md:w-[85%] max-w-5xl transition-all duration-500 border border-white/10 bg-black/40 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.36)] overflow-hidden ${mobileMenuOpen ? 'rounded-[2rem] bg-black/95' : 'rounded-full'}`}
+        // Change default radius from 9999px to 50px to prevent "oval" distortion during expansion
+        initial={{ y: -20, opacity: 0, borderRadius: "50px" }}
+        animate={{ 
+            y: 0, 
+            opacity: 1, 
+            borderRadius: mobileMenuOpen ? "24px" : "50px",
+            backgroundColor: mobileMenuOpen ? "rgba(0, 0, 0, 0.95)" : "rgba(0, 0, 0, 0.4)"
+        }}
+        transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1], delay: 0.2 }}
+        className="fixed top-4 md:top-6 left-0 right-0 z-50 mx-auto w-[90%] md:w-[85%] max-w-5xl border border-white/10 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.36)] overflow-hidden"
       >
         {/* Subtle Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent opacity-50 pointer-events-none" />
@@ -99,10 +166,8 @@ export const Navbar: React.FC = () => {
           </div>
 
           {/* Mobile Menu Toggle */}
-          <div className="md:hidden">
-            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-white p-2">
-              {mobileMenuOpen ? <X /> : <Menu />}
-            </button>
+          <div className="md:hidden flex items-center" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+             <AnimatedMenuIcon isOpen={mobileMenuOpen} />
           </div>
         </div>
 
@@ -110,28 +175,30 @@ export const Navbar: React.FC = () => {
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
+              variants={menuContainerVariants}
+              initial="closed"
+              animate="open"
+              exit="closed"
               className="md:hidden border-t border-white/10 overflow-hidden"
             >
               <div className="flex flex-col p-6 gap-2">
                 {navItems.map((item) => (
-                  <button
+                  <motion.button
                     key={item.id}
+                    variants={menuItemVariants}
                     onClick={() => scrollToSection(item.id)}
-                    className={`py-3 px-4 rounded-lg text-left font-medium text-lg ${activeSection === item.id ? 'text-brand-primary bg-white/5' : 'text-slate-400'}`}
+                    className={`py-3 px-4 rounded-lg text-left font-medium text-lg transition-colors ${activeSection === item.id ? 'text-brand-primary bg-white/5' : 'text-slate-400 hover:text-white'}`}
                   >
                     {item.label}
-                  </button>
+                  </motion.button>
                 ))}
-                <button 
+                <motion.button 
+                  variants={menuItemVariants}
                   onClick={() => scrollToSection('contact')}
                   className="mt-4 bg-brand-primary text-white py-3 rounded-lg font-bold shadow-lg shadow-brand-primary/20"
                 >
                   Contact Now
-                </button>
+                </motion.button>
               </div>
             </motion.div>
           )}
