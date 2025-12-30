@@ -168,6 +168,7 @@ export const VideoCard: React.FC<VideoCardProps> = ({ item, isActive, onPlay, on
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
       whileHover={!isActive ? { y: -5, transition: { duration: 0.3, ease: "easeOut" } } : {}}
+      data-cursor="video"
       className={`relative rounded-xl overflow-hidden cursor-pointer border border-white/5 shadow-lg bg-gray-900 group ${
         aspectRatio === 'vertical' ? 'aspect-[9/16]' : 'aspect-video'
       }`}

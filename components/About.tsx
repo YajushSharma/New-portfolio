@@ -46,7 +46,7 @@ export const About: React.FC = () => {
           >
             <h2 className="text-4xl font-bold mb-6">More Than Just A <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-primary">Video Editor</span></h2>
             <p className="text-gray-400 text-lg mb-6 leading-relaxed">
-              I started editing at 15, hacking together gaming montages. Today, I treat video editing as a science. 
+              I started editing at 15, making gaming montages. Today, I treat video editing as a science.
               My philosophy combines <span className="text-white font-medium">cinematic storytelling</span> with <span className="text-white font-medium">analytical performance</span>.
             </p>
             <p className="text-gray-400 text-lg mb-8 leading-relaxed">

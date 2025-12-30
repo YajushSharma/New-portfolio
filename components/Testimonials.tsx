@@ -24,7 +24,7 @@ const testimonials: Testimonial[] = [
     id: '3',
     name: 'Varuna Saini',
     role: 'Social Media Manager',
-    avatarUrl: 'https://instagram.fdel65-2.fna.fbcdn.net/v/t51.2885-19/541945722_17913415653191413_2130760182026480468_n.jpg?stp=dst-jpg_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fdel65-2.fna.fbcdn.net&_nc_cat=101&_nc_oc=Q6cZ2QGGHLOJv7QpWvFReytjyzw7gv0SWGqBi3PTy22yXrAZc9hrVUXfnKf_eRR3lH8jhYNEbD2y5FgoArKB9BHzgaO5&_nc_ohc=TeXAPA2oy-IQ7kNvwHQMEvy&_nc_gid=z0n2ruaWora_qvehk6Bz2A&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Afm2qwMugPOFb2TnHZJW2t5OQ9wx0hzclhi-Y8vXvLoG8A&oe=694B6558&_nc_sid=8b3546',
+    avatarUrl: 'https://instagram.fdel65-2.fna.fbcdn.net/v/t51.2885-19/541945722_17913415653191413_2130760182026480468_n.jpg?efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fdel65-2.fna.fbcdn.net&_nc_cat=101&_nc_oc=Q6cZ2QGyByiFOAcPMeLyIDvvXyd6-7GjOxUZ_CNJlAQsZ49Ux2aPGAyBL90yHNjr4t9nngdfaozJMBqDDZpDKNU3PBi7&_nc_ohc=-9l_3XJbP8IQ7kNvwGnVN20&_nc_gid=OfGIPR1uGU0Ck7k2bkHmoA&edm=APoiHPcBAAAA&ccb=7-5&oh=00_AfmrCMkKEWGG8BOE5ka9q4opV3SOu_SnzybZijZPIbyl5A&oe=69597558&_nc_sid=22de04',
     quote: "What I loved most was how reliable he was. I handle multiple clients, and he never once missed a deadline or left me stressed. He adapted to different brand styles quickly and delivered edits that made my clients genuinely excited to post. A super smooth collaboration overall.",
     rating: 5
   }

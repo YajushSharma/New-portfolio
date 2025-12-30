@@ -21,7 +21,7 @@ const features = [
   {
     icon: <Sparkles size={32} className="text-brand-secondary" />,
     title: "Unique Style",
-    description: "No cookie-cutter templates. I develop a unique visual identity that matches your brand voice."
+    description: "I develop a unique visual identity that matches your brand voice."
   }
 ];
 
