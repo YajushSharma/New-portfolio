@@ -15,7 +15,7 @@ const testimonials: Testimonial[] = [
   {
     id: '2',
     name: 'Electrical Unboxing',
-    role: 'Course Creator',
+    role: 'Tech Creator',
     avatarUrl: 'https://yt3.googleusercontent.com/wApBhsexFgQZVMG24WaOjnDWZB2d0b-j95hKZLj3hMoj2mwPOaK8Vn3wA2Y_1IzMp5OJQZd2-A=s160-c-k-c0x00ffffff-no-rj',
     quote: "I’ve tried a lot of editors, but he brought a kind of clean, sharp style that fits tech videos perfectly. The short edits especially — crisp cuts, great timing, and no unnecessary flash. My unboxing clips suddenly felt way more premium. Really happy with the consistency too.",
     rating: 5
@@ -24,7 +24,7 @@ const testimonials: Testimonial[] = [
     id: '3',
     name: 'Varuna Saini',
     role: 'Social Media Manager',
-    avatarUrl: 'https://instagram.fdel65-2.fna.fbcdn.net/v/t51.2885-19/541945722_17913415653191413_2130760182026480468_n.jpg?efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fdel65-2.fna.fbcdn.net&_nc_cat=101&_nc_oc=Q6cZ2QGyByiFOAcPMeLyIDvvXyd6-7GjOxUZ_CNJlAQsZ49Ux2aPGAyBL90yHNjr4t9nngdfaozJMBqDDZpDKNU3PBi7&_nc_ohc=-9l_3XJbP8IQ7kNvwGnVN20&_nc_gid=OfGIPR1uGU0Ck7k2bkHmoA&edm=APoiHPcBAAAA&ccb=7-5&oh=00_AfmrCMkKEWGG8BOE5ka9q4opV3SOu_SnzybZijZPIbyl5A&oe=69597558&_nc_sid=22de04',
+    avatarUrl: 'https://ibb.co/FbHJ0Rqk',
     quote: "What I loved most was how reliable he was. I handle multiple clients, and he never once missed a deadline or left me stressed. He adapted to different brand styles quickly and delivered edits that made my clients genuinely excited to post. A super smooth collaboration overall.",
     rating: 5
   }
