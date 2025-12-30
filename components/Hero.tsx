@@ -124,7 +124,7 @@ export const Hero: React.FC = () => {
           transition={{ duration: 1, delay: 0.6 }}
           className="pt-8 border-t border-white/5"
         >
-          <p className="text-sm text-gray-500 mb-6 uppercase tracking-widest font-semibold">Videos optimized for</p>
+          <p className="text-sm text-gray-500 mb-6 uppercase tracking-widest font-semibold">Social Media Links</p>
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-700 ease-out">
             <div className="flex items-center gap-2 hover:text-red-500 transition-colors cursor-default">
               <Youtube size={32} /> <span className="text-xl font-bold">YouTube</span>
