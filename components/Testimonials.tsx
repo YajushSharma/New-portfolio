@@ -7,7 +7,7 @@ const testimonials: Testimonial[] = [
   {
     id: '1',
     name: 'Saurabh Saini',
-    role: 'YouTuber (500k Subs)',
+    role: 'Content Creator',
     avatarUrl: 'https://yt3.googleusercontent.com/5jby35vaE8MN-wPvZmtT3VdWAHQG673XqlMzT4omFNFBrBVD6A43jMfgRUKF63ulCyCRSPsG=s160-c-k-c0x00ffffff-no-rj',
     quote: "Working with him honestly made my workflow so much smoother. As a designer I’m picky about pacing and clarity, but he somehow understood exactly what I wanted without me over-explaining. Every edit felt intentional.",
     rating: 5
