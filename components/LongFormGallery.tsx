@@ -6,7 +6,7 @@ import { VideoCard } from './ui/VideoCard';
 
 const longFormData: VideoProject[] = [
   { id: '101', title: 'Infotainment long form', category: 'long', thumbnailUrl: '', videoUrl: 'https://www.youtube.com/watch?v=-GQ8Aq3Tj6Q', views: '15K' },
-  { id: '102', title: 'Infotainment long form', category: 'long', thumbnailUrl: '', videoUrl: 'https://youtu.be/R6wJE-nTT2A?si=hDMSVBjMmS80mWD3&t=103', views: '12k' },
+  { id: '102', title: 'Infotainment long form', category: 'long', thumbnailUrl: '', videoUrl: 'https://youtu.be/hOqyvvYTEJI?si=BYq8aPXmPeWoslEF', views: '7k' },
   { id: '103', title: 'Podast', category: 'long', thumbnailUrl: '', videoUrl: 'https://www.youtube.com/watch?v=nomcki-Mr5g', views: '64K' },
   { id: '104', title: 'Tech Headphones Review', category: 'long', thumbnailUrl: '', videoUrl: 'https://www.youtube.com/watch?v=8jxM1QTIL10', views: '100K' },
 ];
